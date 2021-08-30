@@ -22,6 +22,9 @@ export class AccountService {
 
   isLoggedIn() : boolean {
     const token = this.dataService.GetToken(); // get token from local storage
+    if(!token){
+      return false;
+    }
     const payload = atob(token.split('.')[1]); // decode payload of token
     const parsedPayload = JSON.parse(payload); // convert payload into an Object
 
