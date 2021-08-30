@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+      <div class="col-md-9">
+        <div class="ibox">
+          <div class="ibox-title">
+            <span class="pull-right">(<strong>{{shoppingCard?.cardItems?.length}}</strong>) item(s)</span>
+            <h5>Items in your cart</h5>
+          </div>
+          <div class="ibox-content" *ngFor="let item of shoppingCard?.cardItems">
+            <app-card-item [product]=item>
+
+            </app-card-item>
+          </div>
+        </div>
+        <div class="ibox-content">
+          <button (click)="checkout()" class="btn btn-primary pull-right"><i class="fa fa fa-shopping-cart"></i> Checkout</button>
+          <button class="btn btn-white"><i class="fa fa-arrow-left"></i> Continue shopping</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

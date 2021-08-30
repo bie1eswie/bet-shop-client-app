@@ -1,0 +1,32 @@
+<div class="table-responsive">
+  <table class="table shoping-cart-table">
+      <tbody>
+      <tr>
+          <td width="90">
+              <div class="cart-product-imitation">
+                <img class="card-img" src="{{ product.pictureUrl }}" alt="{{ product.name }}"  >
+              </div>
+          </td>
+          <td class="desc">
+              <h3>
+              <a href="#" class="text-navy">
+                  {{product.name}}
+              </a>
+              </h3>
+          </td>
+
+          <td>
+              R{{product.price}}
+          </td>
+          <td width="65">
+              <input type="text" class="form-control" placeholder="1">
+          </td>
+          <td>
+              <h4>
+                  {{product.price}}
+              </h4>
+          </td>
+      </tr>
+      </tbody>
+  </table>
+</div>
