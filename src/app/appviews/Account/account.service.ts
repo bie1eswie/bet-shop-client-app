@@ -20,6 +20,15 @@ export class AccountService {
 
   constructor(private dataService: DataService,private appDataService: AppDataService) { }
 
+  isLoggedIn() : boolean {
+    const token = this.dataService.GetToken(); // get token from local storage
+    const payload = atob(token.split('.')[1]); // decode payload of token
+    const parsedPayload = JSON.parse(payload); // convert payload into an Object
+
+    return parsedPayload.exp > Date.now() / 1000; // check if token is expired
+
+  }
+
   login(values: any) {
     this.appDataService.store('authorizationData','');
     return this.dataService.post(this.loginAPI, values).pipe(
